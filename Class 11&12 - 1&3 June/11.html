@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q11</title>
+    <style>
+        .balls{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 100px;
+        }
+        .ball{
+            background-color: red;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Make all the ball Blue -->
+    <div class="balls">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+    <script>
+        // Below code doing blue for one ball
+        // let ball = document.querySelector(".ball");
+        // ball.style.background="blue";
+
+        // Below code doing blue for all ball
+        let allBall = document.querySelectorAll(".ball");
+        console.log(allBall);
+        for(let i=0;i<allBall.length;i++){
+            allBall[i].style.background="blue";
+        }
+
+    </script>
+</body>
+</html>

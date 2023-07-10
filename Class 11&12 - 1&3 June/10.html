@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Event</title>
+</head>
+<body>
+    <div id="doubleHolder">
+        <button class="double">Double</button>
+    </div>
+    <script>
+        //Question
+        // Create a button that is destroyed by clicking on it but two new buttons are created in it's place with same functionality 
+
+        let div = document.querySelector("#doubleHolder");
+        window.addEventListener("click",(e)=>{
+            // console.log(e.target)
+            if(e.target.classList.contains("double")){
+                e.target.remove();
+                let button1 = document.createElement("button");
+                button1.setAttribute("class","double");
+                button1.innerText="Double1";
+                div.appendChild(button1);
+
+                let button2 = document.createElement("button");
+                button2.setAttribute("class","double");
+                button2.innerText="Double2";
+                div.appendChild(button2);
+            }
+        })
+    </script>
+</body>
+</html>

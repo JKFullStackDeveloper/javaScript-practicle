@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Say Hello</button>
+    <script>
+        let bodyElement = document.querySelector("body");
+        let buttonClick = document.querySelector("button");
+        buttonClick.addEventListener("click",()=>{
+            let pElement = document.createElement("p");
+            pElement.innerText="Hello User";
+            bodyElement.appendChild(pElement);
+        });
+    </script>
+</body>
+</html>

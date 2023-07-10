@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="all">Remove All</button>
+    <ul>
+        <li>
+            <p>Task - 1</p>
+            <button>Delete</button>
+        </li>
+        <li>
+            <p>Task - 2</p>
+            <button>Delete</button>
+        </li>
+        <li>
+            <p>Task - 3</p>
+            <button>Delete</button>
+        </li>
+        <li>
+            <p>Task - 4</p>
+            <button>Delete</button>
+        </li>
+    </ul>
+    <script>
+        // Q- Mall Remove All button work and make individual delete btn work
+
+        // Remove All 
+        let buttonAll = document.querySelector("#all");
+        let ulElement = document.querySelector("ul");
+        buttonAll.addEventListener("click",()=>{
+            ulElement.remove();
+        });
+        
+        // Make it working for one
+        // let btn = document.querySelector("li > button");
+        // btn.addEventListener("click",(e)=>{
+        //     e.target.parentElement.remove();
+        // })
+
+        // for all button inside ul
+
+        let btnall = document.querySelectorAll("li > button");
+        for(let i=0; i<btnall.length;i++){
+            btnall[i].addEventListener("click",(e)=>{
+                e.target.parentElement.remove();
+            })
+        }
+    </script>
+</body>
+</html>

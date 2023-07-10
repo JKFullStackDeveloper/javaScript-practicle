@@ -1,0 +1,97 @@
+
+
+<!-- ******************** DOM **************** -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>I am First Heading</h1>
+    <h1>I am another Heading</h1>
+    <div>
+        <p class="firstP">I am First P</p>
+        <p id="secondP">I am Second P</p>
+    </div>
+</body>
+<script>
+     // ****** Read DOM Element ***********
+
+    // console.log("I am JS");
+    // let h1Element = document.querySelector("h1");
+    // console.log(h1Element);
+    // console.log(h1Element.innerText);
+    // let allH1Element = document.querySelectorAll("h1");
+    // console.log(allH1Element);
+    // let h2Element = document.querySelector("h2");
+    // console.log(h2Element);
+    // let firstPara = document.querySelector(".firstP");
+    // console.log(firstPara);
+    // let secondPara = document.querySelector("#secondP");
+    // console.log(secondPara);
+    // let firstPara = document.getElementsByClassName("firstP");
+    // console.log(firstPara);
+    // let secondPara = document.getElementById("secondP");
+    // console.log(secondPara.innerText);
+
+    // ********* Create or Write DOM Element **********
+
+    // let h2Element = document.createElement("h2");
+    // h2Element.innerText="I am Heading 2";
+    // // console.log(h2Element);
+    // let bodyElement = document.querySelector("body");
+    // bodyElement.appendChild(h2Element);
+    // let pElement = document.createElement("p");
+    // pElement.innerText="I am Paragraph created by JS";
+    // let divElement = document.querySelector("div");
+    // divElement.appendChild(pElement);
+
+    // // ********* Update DOM Element **********
+
+    // let h1Element = document.querySelector("h1");
+    // h1Element.innerText=" I am Heading1";
+
+    // // *********** Delete DOM Element ******************
+
+    // let p1Element = document.querySelector(".firstP");
+    // p1Element.remove();
+    
+
+    // How to create element with attributes (add class and id)
+    // setAttributes and getAttributes
+
+    let div2 = document.createElement("div");
+    div2.innerText="I am another DIV";
+     console.log(div2);
+   
+        // setAttribute
+    // div2.setAttribute("class","child-div");
+    // div2.setAttribute("id","div-second")
+    div2.setAttribute("class","first second");  // will overwrite first class
+
+    // div2.setAttribute("customAttribute","randomValue");
+
+    // getAttribute
+
+    // let className = div2.getAttribute("class");
+    // console.log(className);
+    // let idName = div2.getAttribute("id");
+    // console.log(idName);
+
+    // let listOfClass = div2.classList;
+    // console.log(listOfClass); 
+
+    //***** add another classname
+
+    // div2.classList.add("third");
+    // div2.classList.remove("first");
+    // div2.classList.add("fourth");
+
+
+
+</script>
+</html>

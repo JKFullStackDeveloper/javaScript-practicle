@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cell{
+            border: 1px solid;
+            margin: auto;
+            margin-top: 10rem;
+            height: 20rem;
+            width: 20rem;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="cell"></div>
+    <script>
+        // Question
+        // You are given empty Cell.
+        // Write a script that whenever a mouse hover on cell Jail image should appear over cell
+        // and when mouse leave cell then image should remove.
+
+        let cell = document.querySelector(".cell");
+        cell.addEventListener("mouseover",()=>{
+            cell.style.backgroundImage = "url('data:image/png;base64,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')"
+        })
+        cell.addEventListener("mouseout",()=>{
+            cell.style.background="none";
+        })
+    </script>
+</body>
+</html>
