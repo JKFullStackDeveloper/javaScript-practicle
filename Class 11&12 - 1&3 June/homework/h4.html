@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 2rem;
+            min-height: 5rem;
+            min-width: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="border: 1px solid red">
+        <div style="border: 1px solid black">
+            <div style="border: 1px solid green">
+                <div style="border: 1px solid blue"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Q- Write a script using the method querySelector that goes into lowest depth div and deletes it. 
+        // Alternatively also write one line non recursive solution using querySelectorAll
+        // Solution using querySelector (iterative):
+        
+        // solution - 1
+        // let lowestDiv = document.querySelector("div>div>div>div");
+        // lowestDiv.remove();
+
+        // solution - 2 (iterative)
+
+        // let dv = document.querySelector("div");
+        
+        // while (dv.children.length != 0)
+        // dv = dv.children[0];
+        // dv.remove();
+
+        // solution - 3 (recursive)
+
+        // let dv = document.querySelector("div");
+
+        // function fxn(dv){
+        //     if(dv.children.length>0){
+        //         dv = dv.children[0];
+        //         fxn(dv);
+        //     }else{
+        //         dv.remove();
+        //     }
+        // }
+
+        // fxn(dv);
+
+        // Solution - 4 (querySelectorAll)
+
+        let dv = document.querySelectorAll("div")[3].remove();
+        // console.log(dv[3]);
+    </script>
+</body>
+
+</html>
