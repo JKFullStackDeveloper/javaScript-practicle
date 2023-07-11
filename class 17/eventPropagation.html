@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+        }
+        .grandParent{
+            margin: auto;
+            height: 500px;
+            width: 500px;
+            background-color: gainsboro;
+            border: 1px solid black;
+            display: flex;
+        }
+        .parent{
+            margin: auto;
+            background-color: yellowgreen;
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+            display: flex;
+        }
+        .child{
+            margin: auto;
+            height: 150px;
+            width: 150px;
+            background-color: blueviolet;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grandParent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+    <script>
+        // Event Propagation
+
+        // Event Bubbling example (by default event behaviour)
+
+        // let grandParent = document.querySelector(".grandParent");
+        // let parent = document.querySelector(".parent");
+        // let child = document.querySelector(".child");
+
+        // grandParent.addEventListener("click",()=>{
+        //     console.log("Grand Parent was clicked")
+        // })
+
+        // parent.addEventListener("click",()=>{
+        //     console.log("Parent was clicked");
+        // })
+
+        // child.addEventListener("click",(e)=>{
+        //     console.log("Child was clicked");
+        //     e.stopPropagation()                   // to stop event propagation
+        // })
+
+        // Event Capturing example
+
+       let grandParent = document.querySelector(".grandParent");
+        let parent = document.querySelector(".parent");
+        let child = document.querySelector(".child");
+
+        grandParent.addEventListener("click",(e)=>{
+            console.log("Grand Parent was clicked")
+            console.log(e.eventPhase);
+        },true)
+
+        parent.addEventListener("click",(e)=>{
+            console.log("Parent was clicked");
+            console.log(e.eventPhase);
+        },true)
+
+        child.addEventListener("click",(e)=>{
+            console.log("Child was clicked");
+            console.log(e.eventPhase);
+            // e.stopPropagation();
+        },true)
+
+        // grandParent.addEventListener("click",(e)=>{
+        //     console.log("Another Grand Parent")
+        //     console.log(e.eventPhase);
+        // })
+
+        // parent.addEventListener("click",(e)=>{
+        //     console.log("Another Parent");
+        //     console.log(e.eventPhase);
+        // })
+
+        // child.addEventListener("click",(e)=>{
+        //     console.log("Another Child");
+        //     console.log(e.eventPhase);
+        // })
+
+    </script>
+</body>
+</html>

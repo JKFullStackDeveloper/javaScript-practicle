@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target VS CurrentTarget</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+        }
+        .parent{
+            margin: auto;
+            height: 500px;
+            width: 500px;
+            background-color: gainsboro;
+            border: 1px solid black;
+            display: flex;
+        }
+        .child{
+            margin: auto;
+            background-color: yellowgreen;
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+        </div>
+    </div>
+    <script>
+        // target vs currentTarget
+
+        let parent = document.querySelector(".parent");
+        parent.addEventListener("click",(e)=>{
+            console.log("Target is " , e.target);
+            console.log("Current Target is " , e.currentTarget);
+        })
+
+        // let child = document.querySelector(".child");
+        // child.addEventListener("click",(e)=>{
+        //     console.log("Target is " , e.target);
+        //     console.log("Current Target is " , e.currentTarget);
+        // })
+    </script>
+</body>
+</html>
