@@ -39,6 +39,9 @@ p{
     margin-bottom: 3rem;
     font-size: 1.05rem;
 }
+ p input{
+    width: 10rem;
+ }
 
 .btngroup{
     display: flex;
