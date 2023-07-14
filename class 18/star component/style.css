@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 2rem;
+    height: 7rem;
+}
+.icon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.gold{
+    color: gold;
+}
