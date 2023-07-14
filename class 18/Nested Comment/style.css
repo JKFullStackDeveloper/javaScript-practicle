@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 1rem 3rem;
+
+}
+
+.comment-container {
+    padding-left: 1rem;
+    border-left: 1px solid #1c03031a;
+    margin-top: 1.5rem;
+}
+
+.comment-card {
+    padding: 1rem;
+    margin-bottom: 10px;
+}
+
+.comment-reply-container {
+    margin-left: 5rem;
+}
+
+.reply {
+    color: rgb(100, 59, 97);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 0 1rem;
+}
+
+.reply:hover {
+    cursor: pointer;
+    color: brown;
+}
+
+/* if comment-container is not the first child of it's parent then give it margin left  */
+.comment-container:not(:first-child) {
+    margin-left: 4rem;
+}
+
+.comment-reply-container input {
+    width: 15rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+}
+
+.comment-reply-container button {
+    height: 1.5rem;
+    width: 4rem;
+}
