@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+</head>
+
+<body>
+    <button>Click Me</button>
+    <script>
+        let btn = document.querySelector("button");
+        let counter = 1;
+        let betterThrottelFxn = throttel(cb, 1000);
+
+        btn.addEventListener("click", betterThrottelFxn)
+
+        function cb() {
+            console.log("API Called ", counter);
+            counter++;
+        }
+
+        function throttel(cb, delay) {
+            let flag = true;
+            return function () {
+                if (flag) {
+                    cb();
+                    flag = false;
+                    setTimeout(() => {
+                        flag = true;
+                    }, delay);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

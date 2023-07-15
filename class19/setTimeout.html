@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+
+<body>
+    <button>Click Me</button>
+    <script>
+        let btn = document.querySelector("button");
+        let timer = setTimeout(() => {
+            console.log("Hello JS");
+        }, 2000);
+
+        btn.addEventListener("click",()=>{
+            clearTimeout(timer);
+        })
+
+    </script>
+</body>
+
+</html>
