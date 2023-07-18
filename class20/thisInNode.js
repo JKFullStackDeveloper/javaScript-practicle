@@ -1,4 +1,4 @@
-// console.log(this);     // empty {}
+// console.log(this);     // empty object {}
 
 // function fxn(){
 //     console.log(this);     // global object
