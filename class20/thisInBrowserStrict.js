@@ -92,7 +92,8 @@ let obj = {
         }
         console.log("inside fxn" , this);  
         console.log(this.name)             
-        this.gxn();
+        this.gxn();     // Uncaught TypeError: this.gxn is not a function.
+                        // this.gxn-> equalant to obj.gxn()  which is undefined();
     }
 }
 
