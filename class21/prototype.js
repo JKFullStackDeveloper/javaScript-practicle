@@ -21,7 +21,7 @@
 //     console.log(`Break has been applied to ${this.name}`);
 // }
 
-// Car.prototype.sayHello = function(){                           // Prototype Inheritance in constroctor object
+// Car.prototype.sayHello = function(){                           // Prototype Inheritance in constroctor function
 //     console.log("I will purchase " , this.name);
 // }
 
@@ -38,6 +38,7 @@
 // console.log(car3);
 // car3.sayHello();
 
+// ************************************************************************
 
 class Car{
     constructor(name,price,color){
@@ -45,14 +46,13 @@ class Car{
         this.price = price;
         this.color = color;
     }
-    // break= function(){
-    //     console.log(`Break applied to ${this.name}`);
-    // }
+
+    break(){
+        console.log(`Break applied to ${this.name}`);
+    }
 }
 
-Car.prototype.break = function(){                               // Prototype Inheritance in class object
-    console.log(`Break has been installed into ${this.name}`);
-}
+// Prototype Inheritance is by default in class object
 
 let car1 = new Car("BMW",2500000,"Red");
 console.log(car1);

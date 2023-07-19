@@ -8,11 +8,21 @@ class Person{
     sayHello() {
         console.log(`Hello from ${this.name}`);
     }
+
+    static classDetails(){                       // define static method
+        console.log("It is a Person Class")
+    }
 }
+
+Person.classDetails();            //   static method can only access through class name. not through object.
 
 // let person1 = new Person("Juned",32);
 // console.log(person1);
 // person1.sayHello();
+
+// let person2 = new Person("JK",32);
+// console.log(person2);
+// person2.sayHello();
 
 //Inheritance -> The process of one class taking properties from other class known as inheritance
 
