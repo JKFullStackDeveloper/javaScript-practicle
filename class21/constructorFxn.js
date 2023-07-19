@@ -8,3 +8,4 @@ console.log(person1);
 
 let person2 = new Person("Akram",29);
 console.log(person2);
+
