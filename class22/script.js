@@ -97,16 +97,14 @@
 let car1 = {
     name : "BMW",
     price: 3500000,
-    break: function(tyre,engine,body){
+    break: function(press,release,align){
         console.log(`Break has been installed in ${this.name}`);
-        this.tyre = tyre;
-        this.engine = engine;
-        this.body = body;
+        this.breakPress = press;
+        this.breakRelease = release;
+        this.breakAlign = align;
         console.log(this);
     } 
 }
-
-let qualityCheck= ["Tyre Checked","Engine Checked","Body Checked"]; 
 
 let car2 = {
     name : "Audi",
@@ -119,8 +117,8 @@ let car3 = {
 }
 
 let car2Function = car1.break.bind(car2);
-car2Function(qualityCheck[0],qualityCheck[1],qualityCheck[2]);
+car2Function("Break Press checked","Break Release checked","Break align checked ");
 
 let car3Function = car1.break.bind(car3);
-car3Function(qualityCheck[0],qualityCheck[1],qualityCheck[2]);
+car3Function("Break Press checked","Break Release checked","Break align checked ");
 
