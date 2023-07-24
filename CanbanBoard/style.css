@@ -124,6 +124,9 @@
 
 .ticket-color{
     height: 15%;
+    color: whitesmoke;
+    padding: 0.5rem;
+    font-weight: 600;
 }
 
 .ticket-area{

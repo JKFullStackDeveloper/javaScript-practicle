@@ -5,8 +5,11 @@ let textAreaCont = document.querySelector(".textarea-cont");
 let mainCont = document.querySelector(".main-cont");
 let removeBtn = document.querySelector(".remove-btn");
 
+let modalPriorityColor = "black";
+let modalPriorityText = "";
 let addModal = true;
 let removeFlag = false;
+let uid = new ShortUniqueId();
 
 addBtn.addEventListener("click", () => {
     if (addModal) {
@@ -16,6 +19,7 @@ addBtn.addEventListener("click", () => {
         modal.style.display = "none";   // on next click hide model
         addModal = true;                // setting it true for next click
     }
+    textAreaCont.focus();
 })
 
 removeBtn.addEventListener("click", () => {
@@ -30,8 +34,9 @@ removeBtn.addEventListener("click", () => {
 
 textAreaCont.addEventListener("keydown", (e) => {
     let key = e.key;
+    let task = e.target.value;
     if (key == "Enter") {
-        createTicket(e);
+        createTicket(task);
         textAreaCont.value = "";
         modal.style.display = "none";
         addModal = true;
@@ -46,19 +51,22 @@ for (let i = 0; i < allPriorityColor.length; i++) {
             }
         }
         allPriorityColor[i].classList.add("active");
-
+        modalPriorityColor = allPriorityColor[i].classList[1];
+        modalPriorityText =  allPriorityColor[i].textContent;
     })
 }
 
-function createTicket(e) {
-
-    let value = e.target.value;
+function createTicket(task) {
+    
+        let id = uid();
         let ticketCont = document.createElement("div")
         ticketCont.setAttribute("class", "ticket-cont");
-        ticketCont.innerHTML = `<div class="ticket-color red"></div>
-                                <div class="ticket-id">#Eid455</div>
-                                <div class="ticket-area">${value}</div>`;
+        ticketCont.innerHTML = `<div class="ticket-color ${modalPriorityColor}">${modalPriorityText}</div>
+                                <div class="ticket-id">#1${id}</div>
+                                <div class="ticket-area">${task}</div>`;  
+        
         mainCont.appendChild(ticketCont);
+        
         ticketCont.addEventListener("click", () => {
             if (removeFlag) {
                 ticketCont.remove();
