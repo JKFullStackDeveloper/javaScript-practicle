@@ -68,10 +68,10 @@ function createTicket(task) {
         ticketCont.setAttribute("class", "ticket-cont");
         ticketCont.innerHTML = `<div class="ticket-color ${modalPriorityColor}"></div>
                                 <div class="ticket-id">#1${id}</div>
-                                <div class="ticket-area">${task}</div>`;  
+                                <div class="ticket-area">${task}</div>
+                                <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`;  
         
         mainCont.appendChild(ticketCont);
-        
         // code for delete ticket
         ticketCont.addEventListener("click", () => {
             if (removeFlag) {
@@ -102,5 +102,22 @@ function createTicket(task) {
             ticketColor.classList.add(nextColor);
            
         })
+
+        // lock - unlock icon code 
+
+        let lockUnlockBtn = ticketCont.querySelector(".lock-unlock i");
+        let taskArea = ticketCont.querySelector(".ticket-area");
+        lockUnlockBtn.addEventListener("click",()=>{
+            if(lockUnlockBtn.classList.contains("fa-lock")){
+                lockUnlockBtn.classList.remove("fa-lock");
+                lockUnlockBtn.classList.add("fa-lock-open");
+                taskArea.setAttribute("contenteditable","true");
+            }else{
+                lockUnlockBtn.classList.remove("fa-lock-open");
+                lockUnlockBtn.classList.add("fa-lock");
+                taskArea.setAttribute("contenteditable","false");
+            }
+        })
+        
         
 }

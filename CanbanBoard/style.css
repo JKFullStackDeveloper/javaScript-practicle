@@ -106,27 +106,29 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    
 }
 
 .ticket-cont{
     height: 15rem;
     width: 15rem;
     background-color: #cea671;
+    position: relative;
 }
+.ticket-color{
+    height: 15%;
+    color: whitesmoke;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
 .ticket-id{
     color: blue;
     font-weight: 600;
     height: 5%;
     margin-top: .5rem;
     margin-left: .5rem;
-}
-
-.ticket-color{
-    height: 15%;
-    color: whitesmoke;
-    padding: 0.5rem;
-    font-weight: 600;
 }
 
 .ticket-area{
@@ -136,6 +138,14 @@
     word-wrap:break-word;
     overflow: auto;
 }
+
+.lock-unlock{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 1.25rem;
+}
+
 .active{
     border: 3px solid yellow;
     transition: .2s ease;
