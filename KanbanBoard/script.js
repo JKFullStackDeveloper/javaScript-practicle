@@ -98,6 +98,9 @@ for (let i = 0; i < allPriorityColor.length; i++) {
 }
 
 function createTicket(task,modalPriorityColor,ticketId) {
+        if(task == ""){
+            return;
+        }
         let id;
         if(ticketId){
             id = ticketId
@@ -115,20 +118,28 @@ function createTicket(task,modalPriorityColor,ticketId) {
         ticketArr.push({color:modalPriorityColor,task:task,id:id});
         updateLocalStorage();
 
-        // code for delete ticket
-        ticketCont.addEventListener("click", () => {
-            if (removeFlag) {
-                ticketCont.remove();
-                let idx = ticketArr.findIndex((index)=>{
-                    return index.id == id;
-               })         
-                   ticketArr.splice(idx,1);
-                   updateLocalStorage();  
-            }   
-        })
+        handleDelete(ticketCont,id)   // for delete ticket
+        ticketColorChange(ticketCont,id);  // for ticket priority color change
+        editTextarea(ticketCont,id)   // lock - unlock icon code
+        
+        
+}
 
-        // code for priority color change
-        let ticketColor = ticketCont.querySelector(".ticket-color");
+function handleDelete(ticketCont,id){
+    ticketCont.addEventListener("click", () => {
+        if (removeFlag) {
+            ticketCont.remove();
+            let idx = ticketArr.findIndex((index)=>{
+                return index.id == id;
+           })         
+               ticketArr.splice(idx,1);
+               updateLocalStorage();  
+        }   
+    })
+}
+
+function ticketColorChange(ticketCont,id){
+    let ticketColor = ticketCont.querySelector(".ticket-color");
         ticketColor.addEventListener("click",()=>{
             let currentColor = ticketColor.classList[1];
             let currentColorIndex = color.findIndex((col)=>{
@@ -149,10 +160,10 @@ function createTicket(task,modalPriorityColor,ticketId) {
             ticketArr[idx].color = nextColor;
             updateLocalStorage();
         })
+}
 
-        // lock - unlock icon code 
-
-        let lockUnlockBtn = ticketCont.querySelector(".lock-unlock i");
+function editTextarea(ticketCont,id){
+    let lockUnlockBtn = ticketCont.querySelector(".lock-unlock i");
         let taskArea = ticketCont.querySelector(".ticket-area");
         lockUnlockBtn.addEventListener("click",()=>{
             if(lockUnlockBtn.classList.contains("fa-lock")){
@@ -171,8 +182,6 @@ function createTicket(task,modalPriorityColor,ticketId) {
             ticketArr[idx].task = taskArea.innerText;   
             updateLocalStorage();
         })
-        
-        
 }
 
 function updateLocalStorage(){

@@ -12,9 +12,9 @@
 }
 body{
     background: linear-gradient(90deg, #d2d39cf5, #c08686f2);
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    background-repeat: no-repeat;
+    background-repeat:repeat;
 }
 
 .toolbox-cont{
