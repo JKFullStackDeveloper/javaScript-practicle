@@ -1,13 +1,25 @@
+:root{
+    --red:#e3410ecc;
+    --blue:#0c1e59;
+    --green:#1956046b;
+    --black:#321d03;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
+body{
+    background: linear-gradient(90deg, #d2d39cf5, #c08686f2);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
 
 .toolbox-cont{
     height: 5rem;
-    background-color: rgb(27, 137, 232);
+    background: linear-gradient(56deg, #941e85d1, #4b679f);
     display: flex;
     align-items: center;
 }
@@ -31,16 +43,16 @@
     cursor: pointer;
 }
 .red{
-    background-color: red;
+    background-color: var(--red);
 }
 .blue{
-    background-color: blue;
+    background-color: var(--blue);
 }
 .green{
-    background-color: green;
+    background-color: var(--green);
 }
 .black{
-    background-color: black;
+    background-color: var(--black);
 }
 
 
@@ -80,7 +92,7 @@
 .priority-color-cont{
     height: 100%;
     width: 25%;
-    background-color: rgb(228, 228, 244);
+    background-color: rgb(188 30 35 / 28%);
     display: flex;
     flex-direction: column;
     align-items: center;
