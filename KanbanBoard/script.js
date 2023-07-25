@@ -12,9 +12,19 @@ let modalPriorityText = "";
 let addModal = true;
 let removeFlag = false;
 let uid = new ShortUniqueId();
+let ticketArr = [];
 
 
 // Code for filter ticket by color
+
+if(localStorage.getItem("ticket")){
+    let strArr = localStorage.getItem("ticket");
+    let arr = JSON.parse(strArr);
+    for(let i=0;i<arr.length;i++){
+        let ticket = arr[i];
+        createTicket(ticket.task,ticket.color,ticket.id);
+    }
+}
 
 for(let i=0;i<allFilterColor.length;i++){
     allFilterColor[i].addEventListener("click",()=>{
@@ -66,7 +76,7 @@ textAreaCont.addEventListener("keydown", (e) => {
     let key = e.key;
     let task = e.target.value;
     if (key == "Enter") {
-        createTicket(task);
+        createTicket(task,modalPriorityColor);
         textAreaCont.value = "";
         modal.style.display = "none";
         addModal = true;
@@ -87,9 +97,13 @@ for (let i = 0; i < allPriorityColor.length; i++) {
     })
 }
 
-function createTicket(task) {
-    
-        let id = uid();
+function createTicket(task,modalPriorityColor,ticketId) {
+        let id;
+        if(ticketId){
+            id = ticketId
+        }else{
+            id = uid();
+        }
         let ticketCont = document.createElement("div")
         ticketCont.setAttribute("class", "ticket-cont");
         ticketCont.innerHTML = `<div class="ticket-color ${modalPriorityColor}"></div>
@@ -98,11 +112,19 @@ function createTicket(task) {
                                 <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`;  
         
         mainCont.appendChild(ticketCont);
+        ticketArr.push({color:modalPriorityColor,task:task,id:id});
+        updateLocalStorage();
+
         // code for delete ticket
         ticketCont.addEventListener("click", () => {
             if (removeFlag) {
                 ticketCont.remove();
-            }            
+                let idx = ticketArr.findIndex((index)=>{
+                    return index.id == id;
+               })         
+                   ticketArr.splice(idx,1);
+                   updateLocalStorage();  
+            }   
         })
 
         // code for priority color change
@@ -112,12 +134,6 @@ function createTicket(task) {
             let currentColorIndex = color.findIndex((col)=>{
                 return col == currentColor; 
             })
-            // for(let i=0;i<color.length;i++){
-            //     if(color[i]==currentColor){
-            //         currentColorIndex = i;
-            //         break;
-            //     }
-            // }
 
             let nextColorIndex = currentColorIndex+1;
             if(nextColorIndex==4){
@@ -127,6 +143,11 @@ function createTicket(task) {
             ticketColor.classList.remove(currentColor);
             ticketColor.classList.add(nextColor);
            
+            let idx = ticketArr.findIndex((index)=>{
+                        return index.id == id;
+            })
+            ticketArr[idx].color = nextColor;
+            updateLocalStorage();
         })
 
         // lock - unlock icon code 
@@ -143,7 +164,18 @@ function createTicket(task) {
                 lockUnlockBtn.classList.add("fa-lock");
                 taskArea.setAttribute("contenteditable","false");
             }
+
+            let idx = ticketArr.findIndex((index)=>{
+                return index.id == id;
+            })
+            ticketArr[idx].task = taskArea.innerText;   
+            updateLocalStorage();
         })
         
         
+}
+
+function updateLocalStorage(){
+    let strArray = JSON.stringify(ticketArr);
+    localStorage.setItem("ticket",strArray);
 }
