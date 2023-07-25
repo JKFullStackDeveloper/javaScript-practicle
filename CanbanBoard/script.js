@@ -4,6 +4,7 @@ let allPriorityColor = document.querySelectorAll(".priority-color");
 let textAreaCont = document.querySelector(".textarea-cont");
 let mainCont = document.querySelector(".main-cont");
 let removeBtn = document.querySelector(".remove-btn");
+let allFilterColor = document.querySelectorAll(".color");
 
 let color = ["red","blue","green","black"];
 let modalPriorityColor = "black";
@@ -11,6 +12,31 @@ let modalPriorityText = "";
 let addModal = true;
 let removeFlag = false;
 let uid = new ShortUniqueId();
+
+
+// Code for filter ticket by color
+
+for(let i=0;i<allFilterColor.length;i++){
+    allFilterColor[i].addEventListener("click",()=>{
+        let allTicketColor = document.querySelectorAll(".ticket-color");
+        let currentSelectedColor = allFilterColor[i].classList[1];
+        for(let j=0; j<allTicketColor.length;j++){
+            let currentTicketColor = allTicketColor[j].classList[1];
+            if(currentSelectedColor==currentTicketColor){
+                allTicketColor[j].parentElement.style.display="block";
+            }else{
+                allTicketColor[j].parentElement.style.display="none";
+            }
+        } 
+    })
+    //  code for show all tickets on double click
+    allFilterColor[i].addEventListener("dblclick",()=>{
+        let allTicketColor = document.querySelectorAll(".ticket-color");
+        for(let k=0;k<allTicketColor.length;k++){
+            allTicketColor[k].parentElement.style.display="block";
+        }
+    })
+}
 
 // code for add modal container
 addBtn.addEventListener("click", () => {

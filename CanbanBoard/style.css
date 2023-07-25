@@ -13,9 +13,9 @@
 }
 
 .toolbox-priority-cont{
-    background-color: whitesmoke;
+    background-color: antiquewhite;
     height: 3rem;
-    width: 15rem;
+    width: 20rem;
     margin-left: 5rem;
     display: flex;
     align-items: center;
@@ -24,11 +24,10 @@
 
 .color{
     height: 1.5rem;
-    width: 3rem;
+    width: 3.75rem;
     text-align: center;
     color: antiquewhite;
     padding-top: .2rem;
-    border-radius: 5px;
     cursor: pointer;
 }
 .red{
@@ -133,10 +132,11 @@
 
 .ticket-area{
     padding: 1rem;
-    height: 80%;
+    height: 73%;
     font-size: 1.2rem;
     word-wrap:break-word;
     overflow: auto;
+    margin-top: .5rem;
 }
 
 .lock-unlock{
