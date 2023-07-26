@@ -11,7 +11,7 @@
 
 }
 body{
-    background: linear-gradient(90deg, #d2d39cf5, #c08686f2);
+    background: linear-gradient(90deg, #d2d39cf5, #c08686f2 100%);
     height: 100vh;
     width: 100%;
     background-repeat:repeat;
@@ -19,7 +19,7 @@ body{
 
 .toolbox-cont{
     height: 5rem;
-    background: linear-gradient(56deg, #941e85d1, #4b679f);
+    background: linear-gradient(160deg, rgba(191,57,137,1) 0% , rgba(9,107,222,1) 100%);
     display: flex;
     align-items: center;
 }
