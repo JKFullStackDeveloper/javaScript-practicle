@@ -33,25 +33,25 @@
 
 // *******************************************************
 
-console.log("Before");
+// console.log("Before");
 
-setTimeout(function cbS(){
-    console.log("SetTimeOut 1");
-},0);
+// setTimeout(function cbS(){
+//     console.log("SetTimeOut 1");
+// },0);
 
-Promise.resolve().then(function promise1(){
-    console.log("Promise 1");
-})
+// Promise.resolve().then(function promise1(){
+//     console.log("Promise 1");
+// })
 
-Promise.resolve().then(function promise2(){
-    console.log("Promise 2");
-})
+// Promise.resolve().then(function promise2(){
+//     console.log("Promise 2");
+// })
 
-Promise.resolve().then(function promise3(){
-    console.log("Promise 3");
-})
+// Promise.resolve().then(function promise3(){
+//     console.log("Promise 3");
+// })
 
-console.log("After");
+// console.log("After");
 
 // *** Output ***
 // Before
@@ -62,5 +62,3 @@ console.log("After");
 // SetTimeOut 1
 
 // *************************************************************
-
-
