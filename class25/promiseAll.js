@@ -5,6 +5,8 @@ let f1promise = fs.promises.readFile("f1.txt");
 let f2promise = fs.promises.readFile("f2.txt");
 let f3promise = fs.promises.readFile("f3.txt");
 
+// promiseAll will resolve only when all the promise is success.
+// if any of the one is rejected promiseAll will also a fail.
 
 let allPromise = Promise.all([f1promise,f2promise,f3promise]);
 
