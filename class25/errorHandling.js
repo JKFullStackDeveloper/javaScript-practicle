@@ -21,16 +21,36 @@ function generateBill(OrderProcess) {
 }
 
 
+// async function cafe(){
+//     try{
+//         let orderStatus = await orderPlaced("Coffee");
+//         let orderProcess = await processOrder(orderStatus);
+//         let billGenerate = await generateBill(orderProcess);
+//         console.log(billGenerate);
+//     }catch(error){
+//         console.log(error);
+//     }
+    
+// }
+
+// cafe();
+
+
+// IIFE Function (Immediately Invoked Function Expression)
+
 async function cafe(){
     try{
         let orderStatus = await orderPlaced("Coffee");
         let orderProcess = await processOrder(orderStatus);
         let billGenerate = await generateBill(orderProcess);
-        console.log(billGenerate);
+        return billGenerate;
     }catch(error){
         console.log(error);
     }
     
 }
 
-cafe();
+(async function(){
+    let bill = await cafe();
+    console.log(bill);
+})()
