@@ -3,7 +3,7 @@
 // }
 
 // let res = sum(5,10,15);
-// console.warn(res);
+// console.log(res);
 
 
 // currying
