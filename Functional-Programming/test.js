@@ -15,6 +15,7 @@ let diameterOfCircle = diameterfxn(radiusOfCircles)
 console.log(radiusOfCircles);
 console.log(diameterOfCircle);
 
+// circumference
 
 function circumferencefxn(radiusOfCircles){
     let circumferenceOfCircle = [];
