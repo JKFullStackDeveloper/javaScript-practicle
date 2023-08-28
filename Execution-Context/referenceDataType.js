@@ -19,7 +19,7 @@
 // console.log("outside function -> " + a); // no changes in original value
 
 function fxn(obj){
-    obj.city= "Pune"; // change will persist in the original c object as both are referencing to the same address.
+    obj.city= "Pune"; // change will persist in the original 'c' object as both are referencing to the same address.
     console.log(obj);
     obj = {           // new created object will point to the different address in heap memory and change will not persist in the original object.
         name:"juned"
@@ -29,6 +29,6 @@ function fxn(obj){
 let a = {
     name : "jk"
 }
-console.log(a);
+console.log(a); // jk
 fxn(a);  // reference type -  call by sharing    -- it will pointing to the same address in memory heap
 console.log(a);
