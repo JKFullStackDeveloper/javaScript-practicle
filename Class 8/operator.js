@@ -26,6 +26,7 @@ console.log(true+2); // 3   (treat true as 1)
 console.log(true+" string ");  //truestring
 
 console.log(3 - "1");  // 2
+console.log("3"-1); // 2
 console.log(3 - "string"); // NaN
 
 if(3=="3"){                        // just check the value
@@ -73,3 +74,4 @@ var b = NaN
 
 console.log(a == b) // false
 console.log(a === b) // false
+
