@@ -80,6 +80,15 @@
 // console.log("4");   // 1 4 2 3
 
 
+// function fxn(){
+//     setTimeout(()=>{
+//         console.log(i);
+//     })
+//     let i=10;
+// }
+
+// fxn();   // 10
+
 // setTimeout does not guarantee of execution of function after exactly given delay.
 // it can take more time depending on if call stack is empty.
 // But it does guarantee to not execute before the given delay.
